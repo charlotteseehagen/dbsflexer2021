@@ -1,0 +1,35 @@
+,Code,Name
+0,CM.MKT.LCAP.GD.ZS,Market capitalization of listed domestic companies (% of GDP)
+1,EG.IMP.CONS.ZS,"Energy imports, net (% of energy use)"
+2,EG.USE.ELEC.KH.PC,Electric power consumption (kWh per capita)
+3,EN.URB.LCTY.UR.ZS,Population in the largest city (% of urban population)
+4,FP.CPI.TOTL.ZG,"Inflation, consumer prices (annual %)"
+5,FR.INR.LNDP,"Interest rate spread (lending rate minus deposit rate, %)"
+6,FS.AST.PRVT.GD.ZS,Domestic credit to private sector (% of GDP)
+7,GB.XPD.RSDV.GD.ZS,Research and development expenditure (% of GDP)
+8,GC.NLD.TOTL.GD.ZS,Net lending (+) / net borrowing (-) (% of GDP)
+9,GC.TAX.TOTL.GD.ZS,Tax revenue (% of GDP)
+10,GC.XPN.TOTL.GD.ZS,Expense (% of GDP)
+11,IC.BUS.DISC.XQ,Business extent of disclosure index (0=less disclosure to 10=more disclosure)
+12,IC.CRD.INFO.XQ,Depth of credit information index (0=low to 8=high)
+13,IC.GOV.DURS.ZS,Time spent dealing with the requirements of government regulations (% of senior management time)
+14,IC.LGL.CRED.XQ,Strength of legal rights index (0=weak to 12=strong)
+15,IC.REG.DURS.FE,"Time required to start a business, female (days)"
+16,IC.REG.DURS.MA,"Time required to start a business, male (days)"
+17,IC.TAX.TOTL.CP.ZS,Total tax and contribution rate (% of profit)
+18,IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people)
+19,IT.MLT.MAIN.P2,Fixed telephone subscriptions (per 100 people)
+20,IT.NET.BBND.P2,Fixed broadband subscriptions (per 100 people)
+21,LP.LPI.OVRL.XQ,Logistics performance index: Overall (1=low to 5=high)
+22,MS.MIL.XPND.GD.ZS,Military expenditure (% of GDP)
+23,NY.GDP.MKTP.KD.ZG,GDP growth (annual %)
+24,SE.PRM.TCAQ.ZS,Trained teachers in primary education (% of total teachers)
+25,SE.XPD.TOTL.GD.ZS,"Government expenditure on education, total (% of GDP)"
+26,SI.POV.GINI,GINI index (World Bank estimate)
+27,SI.POV.URHC,Urban poverty headcount ratio at national poverty lines (% of urban population)
+28,SL.TLF.CACT.FE.ZS,"Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)"
+29,SL.TLF.CACT.MA.ZS,"Labor force participation rate, male (% of male population ages 15+) (modeled ILO estimate)"
+30,SL.UEM.TOTL.FE.ZS,"Unemployment, female (% of female labor force) (modeled ILO estimate)"
+31,SL.UEM.TOTL.MA.ZS,"Unemployment, male (% of male labor force) (modeled ILO estimate)"
+32,SP.URB.TOTL.IN.ZS,Urban population (% of total population)
+33,TX.VAL.TECH.MF.ZS,High-technology exports (% of manufactured exports)
