@@ -16,22 +16,22 @@ def connect(data, b):
         # create a cursor
         cur = conn.cursor()
         cur1 = conn.cursor()
-        cur1.execute('SELECT * from test')
         
         if b :
             # execute a statement
             cur.execute(query, data)
             conn.commit()
             #display data
-            data_display = cur1.fetchall()
+            data_display = cur.fetchall()
             print(data_display)
 
         else:
             # execute a statement
-            cur.execute(data)
+            cur1.execute('SELECT * from test')
             #display data
-            data_display = cur.fetchall()
-            print(data_display)
+            data_display = cur1.fetchall()
+            for d in data_display:
+                print(d)
 
 
     
@@ -52,12 +52,9 @@ if __name__ == '__main__':
 
     if c == 'i':
         print("add data [datum; tief; hoch; tagesendwert; handelsvolumen], AS TUPLE")
-        #        data = tuple(input())
-        data = ('lenny', 1, 2, 3, 4)
+        data = tuple(input())
         connect(data, True)
 
     else:
-        print("Enter ur desired quer")
-        data = input()
-        connect(data, False)
+        connect("", False)
 
