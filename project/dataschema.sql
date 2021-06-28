@@ -19,7 +19,6 @@ CREATE TABLE country (
 CREATE TABLE gdp (
 	CountryCode(gdp) INTEGER NOT NULL,
 	Expenses INTEGER,
-	Energy imports INTEGER,
       EducationExpenses INTEGER,
       MilitaryExpenses INTEGER,
       PRIMARY KEY (CountryCode(gdp)),
