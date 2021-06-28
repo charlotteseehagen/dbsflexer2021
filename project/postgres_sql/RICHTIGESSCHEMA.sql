@@ -41,11 +41,11 @@ CREATE TABLE gdp (
             REFERENCES country(country_id)
 );
 
-ALTER TABLE country (
+ALTER TABLE country
     CONSTRAINT fk_co2
         FOREIGN KEY (co2_id)
             REFERENCES co2_emission(co2_id),
     CONSTRAINT fk_gdp
         FOREIGN KEY (gdp_id)
             REFERENCES gdp(gdp_id)
-            )
+        
