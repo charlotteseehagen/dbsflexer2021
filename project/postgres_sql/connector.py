@@ -1,7 +1,7 @@
 import psycopg2
 from config import config
 
-def connect(data, b):
+def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
     query1 = "SELECT * from"
@@ -18,23 +18,13 @@ def connect(data, b):
         cur = conn.cursor()
         cur1 = conn.cursor()
         
-        if b :
-            # execute a statement
-            cur.execute(query, data)
-            conn.commit()
-            #display data
-            data_display = cur.fetchall()
-            print(data_display)
+        # execute a statement
+        cur.execute(query, data)
+        conn.commit()
+        #display data
+        data_display = cur.fetchall()
+        print(data_display)
 
-        else:
-            # execute a statement
-            cur1.execute('SELECT * from test')
-            #display data
-            data_display = cur1.fetchall()
-            for d in data_display:
-                print(d)
-        
-        
         #close the communication with the PostgreSQL
         cur.close()
         
