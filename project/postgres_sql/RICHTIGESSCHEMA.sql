@@ -15,6 +15,7 @@ CREATE TABLE country (
 );
 
 CREATE TABLE co2_emission (
+    country_id INT,
     co2_id INT GENERATED ALWAYS AS IDENTITY,
 	country_code_co2 VARCHAR(3),
 	tonnes FLOAT,
@@ -26,6 +27,7 @@ CREATE TABLE co2_emission (
 );
 
 CREATE TABLE gdp (
+    country_id INT,
     gdp_id INT GENERATED ALWAYS AS IDENTITY,
 	country_code_gdp VARCHAR(3),
 	expenses FLOAT,
