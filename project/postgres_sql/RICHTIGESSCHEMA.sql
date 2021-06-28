@@ -14,12 +14,6 @@ CREATE TABLE country (
 	population_relative FLOAT,
     year INTEGER NOT NULL,
     PRIMARY KEY (country_id),
-    CONSTRAINT fk_co2
-        FOREIGN KEY (co2_id)
-            REFERENCES co2_emission(co2_id),
-    CONSTRAINT fk_gdp
-        FOREIGN KEY (gdp_id)
-            REFERENCES gdp(gdp_id)
 );
 
 CREATE TABLE co2_emission (
@@ -47,5 +41,11 @@ CREATE TABLE gdp (
             REFERENCES country(country_id)
 );
 
-
-
+ALTER TABLE country (
+    CONSTRAINT fk_co2
+        FOREIGN KEY (co2_id)
+            REFERENCES co2_emission(co2_id),
+    CONSTRAINT fk_gdp
+        FOREIGN KEY (gdp_id)
+            REFERENCES gdp(gdp_id)
+            )
