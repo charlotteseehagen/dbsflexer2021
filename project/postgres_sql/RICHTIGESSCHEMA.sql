@@ -26,12 +26,13 @@ CREATE TABLE gdp (
 );
 
 
-ALTER TABLE co2_emission
-ADD CONSTRAINT foreign_country_code;
-FOREIGN KEY (country_code) REFERENCES country
+ALTER TABLE co2_emission (
+    ADD CONSTRAINT foreign_country_code,
+    FOREIGN KEY (country_code) REFERENCES country
+);
 
-ALTER TABLE gdp
-ADD CONSTRAINT foreign_country_code;
-FOREIGN KEY (country_code) REFERENCES country
+ALTER TABLE gdp (
+    ADD CONSTRAINT foreign_country_code;
+    FOREIGN KEY (country_code) REFERENCES country
 
 )
