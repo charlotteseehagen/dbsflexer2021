@@ -19,7 +19,7 @@ def connect():
         cur1 = conn.cursor()
         
         # execute a statement
-        cur.execute(query, data)
+        cur.execute(query)
         conn.commit()
         #display data
         data_display = cur.fetchall()
