@@ -1,8 +1,8 @@
 --MEGA DATABASESCHEMA 420 69
 
-DROP TABLE IF EXISTS country CASCADE;
-DROP TABLE IF EXISTS co2_emission CASCADE;
-DROP TABLE IF EXISTS gdp CASCADE;
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS co2_emission;
+DROP TABLE IF EXISTS gdp;
 
 
 CREATE TABLE country (
@@ -42,10 +42,10 @@ CREATE TABLE gdp (
 );
 
 ALTER TABLE country
-    CONSTRAINT fk_co2
+    ADD CONSTRAINT fk_co2
         FOREIGN KEY (co2_id)
             REFERENCES co2_emission(co2_id),
-    CONSTRAINT fk_gdp
+    ADD CONSTRAINT fk_gdp
         FOREIGN KEY (gdp_id)
             REFERENCES gdp(gdp_id)
         
