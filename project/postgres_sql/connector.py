@@ -4,7 +4,7 @@ from config import config
 def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
-    query1 = "SELECT * from"
+    query = "SELECT * from"
  
     try:
         # read connection parameters
