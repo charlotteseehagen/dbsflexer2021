@@ -7,11 +7,19 @@ DROP TABLE IF EXISTS gdp;
 
 CREATE TABLE country (
     country_id INT GENERATED ALWAYS AS IDENTITY,
+    co2_id INT,
+    gdp_id INT,
 	country_code VARCHAR(3),
 	population_total FLOAT,
 	population_relative FLOAT,
     year INTEGER NOT NULL,
     PRIMARY KEY (country_id)
+    CONSTRAINT fk_co2
+        FOREIGN KEY (co2_id)
+            REFERENCES co2_emission(co2_id)
+    CONSTRAINT fk_gdp
+        FOREIGN KEY (gdp_id)
+            REFERENCES gdp(gdp_id)
 );
 
 CREATE TABLE co2_emission (
