@@ -16,6 +16,7 @@ def connect(data, b):
         
         # create a cursor
         cur = conn.cursor()
+        cur1 = conn.cursor()
         
         if b :
             # execute a statement
