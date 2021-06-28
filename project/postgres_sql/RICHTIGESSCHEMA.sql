@@ -13,7 +13,7 @@ CREATE TABLE country (
 	population_total FLOAT,
 	population_relative FLOAT,
     year INTEGER NOT NULL,
-    PRIMARY KEY (country_id),
+    PRIMARY KEY (country_id)
 );
 
 CREATE TABLE co2_emission (
