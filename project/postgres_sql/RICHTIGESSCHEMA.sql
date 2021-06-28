@@ -15,7 +15,7 @@ CREATE TABLE co2_emission (
     PRIMARY KEY (country_code_co2),
     CONSTRAINT foreign_country_code_co2
         FOREIGN KEY (country_code)
-        REFERENCES country
+        REFERENCES country(country_code)
 );
 
 CREATE TABLE gdp (
@@ -26,7 +26,7 @@ CREATE TABLE gdp (
     PRIMARY KEY (country_code_gdp),
 	CONSTRAINT foreign_country_code_gdp
         FOREIGN KEY (country_code)
-        REFERENCES country
+        REFERENCES country(country_code)
 );
 
 
