@@ -4,7 +4,7 @@ from config import config
 def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
-    query = "INSERT INTO country(country_id, co2_id, gdp_id, country_code, population_total, population_relative, year) VALUES (1,1,1, 'DEU', 420.69, 42.0, 2021)"
+    query = "INSERT INTO country(co2_id, gdp_id, country_code, population_total, population_relative, year) VALUES (1,1, 'DEU', 420.69, 42.0, 2021)"
  
     try:
         # read connection parameters
