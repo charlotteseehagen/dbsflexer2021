@@ -1,23 +1,27 @@
-CREATE TABLE CO2 emission (
-	Country Code(Co2) INTEGER NOT NULL,
+CREATE TABLE CO2emission (
+	CountryCode(Co2) INTEGER NOT NULL,
 	Tonnes INTEGER,
       Year INTEGER NOT NULL,
-      PRIMARY KEY (Country Code(Co2)), 
+      PRIMARY KEY (CountryCode(Co2)), 
+	FOREIGN KEY (CountryCode) REFERENCES country(CountryCode)
 );
 
 CREATE TABLE country (
-	Country Code INTEGER NOT NULL,
+	CountryCode INTEGER NOT NULL,
 	Population_Total INTEGER,
 	Population_Relative INTEGER,
       Year INTEGER NOT NULL,
       PRIMARY KEY (Country Code),
+	FOREIGN KEY (CountryCode(gdp)) REFERENCES gdp(CountryCode(gdp))
+	FOREIGN KEY (CountryCode(Co2)) REFERENCES CO2emission(CountryCode(Co2))
 );
 
 CREATE TABLE gdp (
-	Country Code(gdp) INTEGER NOT NULL,
+	CountryCode(gdp) INTEGER NOT NULL,
 	Expenses INTEGER,
 	Energy imports INTEGER,
-      Education Expenses INTEGER,
-      Military Expenses INTEGER,
-      PRIMARY KEY (Country Code(gdp)),
+      EducationExpenses INTEGER,
+      MilitaryExpenses INTEGER,
+      PRIMARY KEY (CountryCode(gdp)),
+	FOREIGN KEY (CountryCode) REFERENCES country(CountryCode)
 );
