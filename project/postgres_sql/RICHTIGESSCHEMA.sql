@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS gdp;
 
 
 CREATE TABLE country (
-    country_id INTEGER,
+    country_id INT GENERATED ALWAYS AS IDENTITY,
 	country_code VARCHAR(3),
 	population_total FLOAT,
 	population_relative FLOAT,
@@ -15,24 +15,24 @@ CREATE TABLE country (
 );
 
 CREATE TABLE co2_emission (
-    co2_id INTEGER,
+    co2_id INT GENERATED ALWAYS AS IDENTITY,
 	country_code_co2 VARCHAR(3),
 	tonnes FLOAT,
     year INTEGER NOT NULL,
     PRIMARY KEY (co2_id),
-    CONSTRAINT foreign_country_code_co2
+    CONSTRAINT fk_country
         FOREIGN KEY (country_id)
         REFERENCES country(country_id)
 );
 
 CREATE TABLE gdp (
-    gdp_id INTEGER,
+    gdp_id INT GENERATED ALWAYS AS IDENTITY,
 	country_code_gdp VARCHAR(3),
 	expenses FLOAT,
     education_expenses FLOAT,
     military_expenses FLOAT,
     PRIMARY KEY (gdp_id),
-	CONSTRAINT foreign_country_code_gdp
+	CONSTRAINT fk_country
         FOREIGN KEY (country_id)
         REFERENCES country(country_id)
 );
