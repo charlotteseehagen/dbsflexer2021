@@ -14,7 +14,8 @@ CREATE TABLE co2_emission (
     year INTEGER NOT NULL,
     PRIMARY KEY (country_code_co2)
     CONSTRAINT foreign_country_code_co2
-    FOREIGN KEY (country_code) REFERENCES country
+        FOREIGN KEY (country_code)
+        REFERENCES (country)
 );
 
 CREATE TABLE gdp (
@@ -24,7 +25,8 @@ CREATE TABLE gdp (
     military_expenses FLOAT,
     PRIMARY KEY (country_code_gdp)
 	CONSTRAINT foreign_country_code_gdp
-    FOREIGN KEY (country_code) REFERENCES country
+        FOREIGN KEY (country_code)
+        REFERENCES (country)
 );
 
 
