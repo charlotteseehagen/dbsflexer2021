@@ -5,14 +5,14 @@ CREATE TABLE country (
 	population_total FLOAT,
 	population_relative FLOAT,
     year INTEGER NOT NULL,
-    PRIMARY KEY (country_code),
+    PRIMARY KEY (country_code)
 );
 
 CREATE TABLE co2_emission (
 	country_code_co2 VARCHAR(3),
 	tonnes FLOAT,
     year INTEGER NOT NULL,
-    PRIMARY KEY (country_code_co2),
+    PRIMARY KEY (country_code_co2)
     CONSTRAINT foreign_country_code_co2
     FOREIGN KEY (country_code) REFERENCES country
 );
@@ -22,7 +22,7 @@ CREATE TABLE gdp (
 	expenses FLOAT,
     education_expenses FLOAT,
     military_expenses FLOAT,
-    PRIMARY KEY (country_code_gdp),
+    PRIMARY KEY (country_code_gdp)
 	CONSTRAINT foreign_country_code_gdp
     FOREIGN KEY (country_code) REFERENCES country
 );
