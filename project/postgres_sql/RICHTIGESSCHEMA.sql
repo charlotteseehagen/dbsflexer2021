@@ -30,6 +30,7 @@ ALTER TABLE co2_emission
     ADD CONSTRAINT foreign_country_code_co2
     FOREIGN KEY (country_code) REFERENCES country
 
+)
 
 ALTER TABLE gdp
     ADD CONSTRAINT foreign_country_code_gdp
