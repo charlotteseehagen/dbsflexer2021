@@ -4,6 +4,7 @@ from config import config
 def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
+    query = "INSERT INTO country(country_code, population_total, population_relative, year) VALUES ('DEU', 420.69, 42.0, 2021)"
  
     try:
         # read connection parameters
@@ -15,15 +16,21 @@ def connect():
         
         # create a cursor
         cur = conn.cursor()
+        cur1 = conn.cursor()
         
-        #execute statement
-        cur.execute('SELECT version()')
-        
-    
-    # close the communication with the PostgreSQL
+        # execute a statement
+        cur.execute(query)
+        conn.commit()
+        #display data
+        data_display = cur.fetchall()
+        print(data_display)
+
+        #close the communication with the PostgreSQL
         cur.close()
+        
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
+        
     finally:
         if conn is not None:
             conn.close()
@@ -33,3 +40,4 @@ def connect():
 if __name__ == '__main__':
     
     connect()
+
