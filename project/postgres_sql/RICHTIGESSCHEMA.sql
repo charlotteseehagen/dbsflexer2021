@@ -7,7 +7,6 @@ DROP TABLE IF EXISTS data;
 CREATE TABLE country (
 	country_code VARCHAR(3),
 	country_name VARCHAR(255),
-    continent VARCHAR(25),
     PRIMARY KEY (country_code)
 );
 
