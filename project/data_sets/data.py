@@ -1,5 +1,4 @@
 import csv
-import ast
 
 def main():
 
@@ -15,14 +14,14 @@ def main():
     reader_elec = csv.DictReader(open("electric_sources.csv"))
 
     #first place every reader object in a dictonary and clear unneccesary cols 
-    dic_gdp = {"Country_Code" : [], "Year" : [], "GDP" : []}
-    dic_popg = {"Country_Code" : [], "Year" : [], "POP_growth" : []}
     dic_country = {'Country_Code' : [], 'Country_Name' : []}
       
     valid_codes= []
     valid_names= []
     # -> then make the country code the id
     #in gdp
+    dic_gdp = {"Country_Code" : [], "Year" : [], "GDP" : []}
+
     for row in reader_gdp:
         row.pop("1960")
         row.pop("Indicator Name")
@@ -46,7 +45,6 @@ def main():
 
     """
     FIRST CSV-DUMP
-    """
     csv_file = "country_clean.csv"
     try:
         with open(csv_file, 'w') as csvfile:
@@ -58,6 +56,7 @@ def main():
         print("I/O error")
 
     """
+    dic_popg = {"Country_Code" : [], "Year" : [], "POP_growth" : []}
     #in population_growth
     for row in reader_popgrowth:
         row.pop("1960")
@@ -74,11 +73,26 @@ def main():
                     dic_popg["Year"].append(k)
                     dic_popg["POP_growth"].append(v)
 
+    dic_elec = {"Country_Code" : [], "Year": [], "ElectricSource" : []}
 
-    print(dic_popg["Country_Code"] == dic_gdp["Country_Code"])
-    for i in range(len(dic_gdp["Country_Code"])):
+    """
+    print(reader_elec.keys())
+    for row in reader_elec:
+        row.pop("1960")
+        row.pop("Indicator Name")
+        row.pop("Indicator Code")
+        row.pop("Country Name")
+        for k, v in row.items():
+            if k == "Country Code":
+                dic_elec["Country_Code"].append(v)
+            elif k != "Country Code" and k != "Country Name":
+                dic_elec["Year"].append(k)
+                dic_elec["ElectricSource"].append(v)
 
-        print(dic_gdp["Year"][i], dic_popg["Year"][i])
+            
+    print(len(dic_elec["Country_Code"]))
+    print(len(dic_popg["Country_Code"]))
+    """
 
     test_dic = {"Country_Name" : [], "Country_Code" : [], "Year" : [], "Co2" : [], "Pop_total" : []}
     test_dic0 = {"Country_Name" : [], "Year" : [], "Pop_total" : []}
@@ -100,13 +114,19 @@ def main():
     for i in range(len(test_dic0["Country_Name"])):
         for j in range(len(test_dic["Country_Name"])):
             if test_dic["Country_Name"][j] == test_dic0["Country_Name"][i] and test_dic["Year"][j] == test_dic0["Year"][i]:
-                print(test_dic["Country_Name"][j], test_dic["Year"][j] , test_dic0["Country_Name"][i], test_dic0["Year"][i])
-                if i == 100:
-                    return
                 test_dic["Pop_total"].append(test_dic0["Pop_total"][i])
-    """
 
-                
+    csv_file = "tmp_clean.csv"
+    try:
+        with open(csv_file, 'w') as csvfile:
+            writer = csv.writer(csvfile)
+            for cc, y, co, pt in zip(test_dic["Country_Code"], test_dic["Year"], test_dic["Co2"], test_dic["Pop_total"]):
+                writer.writerow([cc, y, co, pt])
+
+    except IOError:
+        print("I/O error")
+
+
 
 if __name__ == '__main__':
 
