@@ -13,11 +13,10 @@ CREATE TABLE country (
 CREATE TABLE data (
     country_code VARCHAR(3),
     year INT,
-    gdp FLOAT,
     co2_emission FLOAT,
-    expenses FLOAT,
-    population_total FLOAT,
+    gdp FLOAT IS NOT NULL,
     population_relative FLOAT,
+    population_total FLOAT,
     electricity_production_renewable FLOAT,
     PRIMARY KEY (country_code, year)
 );
