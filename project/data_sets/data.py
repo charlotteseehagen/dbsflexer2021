@@ -180,10 +180,10 @@ def main():
     try:
         with open(csv_file, 'w') as csvfile:
             writer = csv.writer(csvfile)
-            for cc, cn, ye, co, gd, pr, pt, es in zip( \
-                   dic_FULL["Country_Code"], dic_FULL["Country_Name"], dic_FULL["Year"], dic_FULL["Co2(tonnes)"],\
+            for cc, ye, co, gd, pr, pt, es in zip( \
+                   dic_FULL["Country_Code"], dic_FULL["Year"], dic_FULL["Co2(tonnes)"],\
                    dic_FULL["Gdp(USD)"], dic_FULL["Pop_rel"], dic_FULL["Pop_tot"], dic_FULL["Electric_Source(Kwh)"]):
-                writer.writerow([cc, cn, ye, co, gd, pr, pt , es])
+                writer.writerow([cc, ye, co, gd, pr, pt , es])
 
     except IOError:
         print("I/O error")
