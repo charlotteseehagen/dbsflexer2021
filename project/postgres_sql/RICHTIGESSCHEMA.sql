@@ -14,7 +14,7 @@ CREATE TABLE data (
     country_code VARCHAR(3),
     year INT,
     co2_emission FLOAT,
-    gdp FLOAT IS NOT NULL,
+    gdp FLOAT ,
     population_relative FLOAT,
     population_total FLOAT,
     electricity_production_renewable FLOAT,
