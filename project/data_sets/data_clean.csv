@@ -1,3 +1,4 @@
+country_code, year, co2(tonnes), gdp(USD), pop_rel, pop_tot, electric_sources(Kwh)
 ABW,1961,645552.56,,2.238143931,55438,
 ABW,1962,708942.27,,1.409621865,56225,
 ABW,1963,679087.76,,0.832452558,56695,
