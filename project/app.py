@@ -5,7 +5,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
-import postgres_sql/connect.py as connector
+from db_conn import connector as con
+
+#print(con.connect("SELECT * from country")[0])
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
