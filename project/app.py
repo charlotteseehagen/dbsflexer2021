@@ -5,23 +5,41 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
-from db_conn import connector as con
+from db_conn.connector import connect 
+#QUERIES:
+query0 = "SELECT country_code, max(gdp) AS gdp\
+            FROM data\
+            WHERE year = 2000 AND gdp IS NOT NULL\
+            GROUP BY country_code, gdp\
+            ORDER BY gdp DESC\
+            LIMIT 10;"
 
-#print(con.connect("SELECT * from country")[0])
+#establish connection and fetch queries
+def data_fetch():
+    raw_data = connect("SELECT * from data;")
+    #transform data
+    df0 = {"Country Code": [], "Year" : [], "GDP(USD)": []}
+    
+    if raw_data[1]:
+        for tup in raw_data[0]:
+            df0["Country Code"].append(tup[0])
+            df0["Year"].append(tup[1])
+            df0["GDP(USD)"].append(tup[3])
+
+    else:
+        print("FUCK")
+
+    return pd.DataFrame(df0)
+
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-# see https://plotly.com/python/px-arguments/ for more options
+#call data from db
+df = data_fetch()
 
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
-
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+fig = px.scatter(df, x="Year", y="GDP(USD)", color="Country Code", hover_name="Country Code")
 
 app.layout = html.Div(children=[
     html.H1(children='DBS-Project 2021'),
@@ -38,12 +56,6 @@ app.layout = html.Div(children=[
 
 if __name__ == '__main__':
 
-    query0 = "SELECT country_code, max(gdp) AS gdp\
-                FROM data\
-                WHERE year = 2000 AND gdp IS NOT NULL\
-                GROUP BY country_code, gdp\
-                ORDER BY gdp DESC\
-                LIMIT 10;"
                 
     query1 = "SELECT country_code, co2_emission, max(gdp) AS gdp \
                 FROM data \

@@ -1,5 +1,5 @@
 import psycopg2
-from db_conn import config
+#from db_conn.config import config
 
 def connect(query):
     """ Connect to the PostgreSQL database server """
@@ -7,11 +7,12 @@ def connect(query):
  
     try:
         # read connection parameters
-        params = config()
+        #params = config()
 
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
-        conn = psycopg2.connect(**params)
+        conn = psycopg2.connect("dbname='dbsproject' user='postgres' host='localhost' password='dbs'")
+        #conn = psycopg2.connect(**params)
         
         # create a cursor
         cur = conn.cursor()
@@ -19,8 +20,7 @@ def connect(query):
         # execute a statement
         cur.execute(query)
         conn.commit()
-        #display data
-        data_display = cur.fetchall()
+        data = cur.fetchall()
 
         #close the communication with the PostgreSQL
         cur.close()
@@ -34,7 +34,7 @@ def connect(query):
             conn.close()
             print('Database connection closed.')
 
-        return(data_display, True)
+            return(data, True)
 
 
 if __name__ == '__main__':
