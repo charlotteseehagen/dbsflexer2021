@@ -137,7 +137,6 @@ def main():
             dic_poptotal["Pop_total"].append(row["Count"])
 
     #second half merge
-    print("Second half merge starting ...")
     dic_part1= {"Country_Name" : [], "Country_Code" : [], "Year" : [], "Co2" : [], "Pop_total" : []}
 
     for i in range(len(dic_poptotal["Country_Name"])):
@@ -187,8 +186,6 @@ def main():
 
     except IOError:
         print("I/O error")
-
-
 
 if __name__ == '__main__':
 
