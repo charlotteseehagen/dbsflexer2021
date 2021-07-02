@@ -35,4 +35,36 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
+
+    query0 = "SELECT country_code, max(gdp) AS gdp\
+                FROM data\
+                WHERE year = 2000 AND gdp IS NOT NULL\
+                GROUP BY country_code, gdp\
+                ORDER BY gdp DESC\
+                LIMIT 10;"
+                
+    query1 = "SELECT country_code, co2_emission, max(gdp) AS gdp \
+                FROM data \
+                WHERE country_code = 'USA' OR country_code = 'JPN' OR country_code = 'DEU' OR country_code = 'GBR' OR country_code = 'FRA' OR country_code = 'CHN' OR country_code = 'ITA' OR country_code = 'CAN' OR country_code = 'MEX' OR country_code = 'BRA'\
+                AND year > 1999 AND year < 2016\
+                GROUP BY country_code, co2_emission\
+                ORDER BY gdp DESC\
+                LIMIT 10;"
+                
+    query2 = "SELECT country_code, electricity_production_renewable, max(gdp) AS gdp\
+                FROM data\
+                WHERE WHERE country_code = 'USA' OR country_code = 'JPN' OR country_code = 'DEU' OR country_code = 'GBR' OR country_code = 'FRA' OR country_code = 'CHN' OR country_code = 'ITA' OR country_code = 'CAN' OR country_code = 'MEX' OR country_code = 'BRA'\
+                AND year > 1999 AND year < 2016\
+                GROUP BY country_code,  electricity_prodction\
+                ORDER BY gdp DESC\
+                LIMIT 10;"
+                
+    query3 = "SELECT country_code, co2_emission, electricity_production_renewable,                  max(gdp) AS gdp\
+                FROM data\
+                WHERE WHERE country_code = 'USA' OR country_code = 'JPN' OR country_code = 'DEU' OR country_code = 'GBR' OR country_code = 'FRA' OR country_code = 'CHN' OR country_code = 'ITA' OR country_code = 'CAN' OR country_code = 'MEX' OR country_code = 'BRA'\
+                AND year > 1999 AND year < 2016\
+                GROUP BY country_code, co2_emission, electricity_prodction\
+                ORDER BY gdp DESC\
+                LIMIT 10;"
+                
     app.run_server(debug=True,port=80,host='0.0.0.0')
