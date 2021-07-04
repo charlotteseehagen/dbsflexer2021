@@ -110,10 +110,10 @@ fig2 = px.line(df2, x="Year", y="Renewable Electricity Sources(Kwh)" , color="Co
 app.layout = html.Div(children=[
     # All elements from the top of the page
     html.Div([
-        html.H1(children='Hello Dash'),
+        html.H1(children='DBS Project 2021'),
 
         html.Div(children='''
-            Dash: A web application framework for Python.
+            Countries with the ten highest GDP(USD) in 2000
         '''),
 
         dcc.Graph(
@@ -123,10 +123,10 @@ app.layout = html.Div(children=[
     ]),
     # New Div for all elements in the new 'row' of the page
     html.Div([
-        html.H1(children='Hello Dash'),
+        html.H1(children=''),
 
         html.Div(children='''
-            Dash: A web application framework for Python.
+            CO2 Emission of those Countries from 2000-2015
         '''),
 
         dcc.Graph(
@@ -135,10 +135,10 @@ app.layout = html.Div(children=[
         ),
     ]),
     html.Div([
-        html.H1(children='Hello Dash'),
+        html.H1(children=''),
 
         html.Div(children='''
-            Dash: A web application framework for Python.
+            Electricity production from renewable ressources of those countries from 2000-2015 
         '''),
 
         dcc.Graph(
