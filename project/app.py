@@ -22,7 +22,7 @@ query1 = "SELECT country_code, co2_emission, max(gdp) AS gdp \
             ORDER BY gdp DESC\
             LIMIT 10;"
                 
-    query2 = "SELECT country_code, electricity_production_renewable, max(gdp) AS gdp\
+query2 = "SELECT country_code, electricity_production_renewable, max(gdp) AS gdp\
             FROM data\
             WHERE WHERE country_code = 'USA' OR country_code = 'JPN' OR country_code = 'DEU' OR country_code = 'GBR' OR country_code = 'FRA' OR country_code = 'CHN' OR country_code = 'ITA' OR country_code = 'CAN' OR country_code = 'MEX' OR country_code = 'BRA'\
             AND year > 1999 AND year < 2016\
@@ -30,7 +30,7 @@ query1 = "SELECT country_code, co2_emission, max(gdp) AS gdp \
             ORDER BY gdp DESC\
             LIMIT 10;"
                 
-    query3 = "SELECT country_code, co2_emission, electricity_production_renewable,                  max(gdp) AS gdp\
+query3 = "SELECT country_code, co2_emission, electricity_production_renewable,                  max(gdp) AS gdp\
             FROM data\
             WHERE country_code = 'USA' OR country_code = 'JPN' OR country_code = 'DEU' OR country_code = 'GBR' OR country_code = 'FRA' OR country_code = 'CHN' OR country_code = 'ITA' OR country_code = 'CAN' OR country_code = 'MEX' OR country_code = 'BRA'\
             AND year > 1999 AND year < 2016\
